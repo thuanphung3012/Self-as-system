@@ -3,7 +3,9 @@ body {
  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
+/* It's common practice to have a space between the selector and the left curly brace */
 #myTopnav{
+    /* Using float works, but I think it would be better to use flexbox in order to create the two column layout. */
     float: left;
     display: block;
     color: black;
@@ -17,6 +19,7 @@ hr{
     margin-left:  20px;
     border: .1px solid;
     background-color: black;
+    /* Using percentages in this way can be tricky. I would add a right padding with a px value so it's consistent */
     width: 98%;
 }
 
@@ -50,9 +53,12 @@ a,a:visited, a:link, a:active{
  
 }
 
+/* This is a great way to style your images! */
 .items img{
     width: 100%;
 }
+
+/* Nice use of flexbox + media queries! */
 @media screen and (min-width: 1000px) {
 .container{
     display: flex;
@@ -65,10 +71,15 @@ a,a:visited, a:link, a:active{
 }
 
 
+/* 
+ These css properties can just be applied at the top, since they're applied anyway. 
+ That way they will be overriden by the 1000px media query 
+*/
 @media screen and (max-width: 400px) {
 .container{
     display: flex;
     flex-direction: row;
+/* These right curly braces should be indented */
 }
 .items{
     justify-content: center;
